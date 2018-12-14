@@ -18,15 +18,10 @@ endif()
 
 # include helper file
 include( ${CGAL_USE_FILE} )
+#include( ${BOOST_USE_FILE}  )
 
 
 # Boost and its components
-#set(CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "/usr/local/Cellar/boost/1.68.0/include/boost")
-#set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "/usr/local/Cellar/boost/1.68.0/lib")
-set(BOOST_ROOT, "/usr/local/Cellar/boost/1.68.0")
-set(BOOST_INCLUDEDIR, "/usr/local/Cellar/boost/1.68.0/include/boost")
-set(BOOST_LIBRARYDIR, "/usr/local/Cellar/boost/1.68.0/lib/boost")
-
 find_package( Boost REQUIRED )
 
 if ( NOT Boost_FOUND )
@@ -37,6 +32,12 @@ if ( NOT Boost_FOUND )
 
 endif()
 
+find_package(Eigen3 3.1.0)
+if (NOT EIGEN3_FOUND)
+  message(STATUS "This project requires the Eigen library, and will not be compiled")
+  return ()
+endif()
+include( ${EIGEN3_USE_FILE} )
 # include for local directory
 
 # include for local package

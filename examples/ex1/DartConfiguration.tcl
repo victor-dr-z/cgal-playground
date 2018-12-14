@@ -4,17 +4,20 @@
 
 
 # Configuration directories and files
-SourceDirectory: /Volumes/Lexar/cgal-playground/examples/ex1
-BuildDirectory: /Volumes/Lexar/cgal-playground/examples/ex1
+SourceDirectory: /Users/wzheng/cgal-playground/examples/ex1
+BuildDirectory: /Users/wzheng/cgal-playground/examples/ex1
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: localhost
+Site: MBP-WZHE-old.local
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Darwin-c++
+
+# Subprojects
+LabelsForSubprojects: 
 
 # Submission information
 IsCDash: 
@@ -33,8 +36,8 @@ ScpCommand: /usr/bin/scp
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/opt/local/bin/cmake" "/Volumes/Lexar/cgal-playground/examples/ex1"
-MakeCommand: /opt/local/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+ConfigureCommand: "/anaconda3/bin/cmake" "/Users/wzheng/cgal-playground/examples/ex1"
+MakeCommand: /anaconda3/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -51,7 +54,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: /usr/local/bin/git
+GITCommand: /usr/bin/git
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -69,8 +72,8 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
-CompilerVersion: 9.1.0.9020039
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++
+CompilerVersion: 10.0.0.10001044
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 
